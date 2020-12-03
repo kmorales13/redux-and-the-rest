@@ -211,7 +211,7 @@ function handleListError(options, actionCreatorOptions, httpCode, errorEnvelope,
  */
 function reducer(resources, action) {
   const { status, items, key, httpCode, list, error, errors, errorOccurredAt } = action;
-  const { metadata } = list;
+  const { metadata = {} } = list;
   const currentList = resources.lists[key] || LIST;
 
   /**
