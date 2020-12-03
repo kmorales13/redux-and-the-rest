@@ -210,7 +210,8 @@ function handleListError(options, actionCreatorOptions, httpCode, errorEnvelope,
  * @returns {ResourcesReduxState} The new resource state
  */
 function reducer(resources, action) {
-  const { status, items, key, httpCode, list, error, errors, errorOccurredAt, metadata = {} } = action;
+  const { status, items, key, httpCode, list, error, errors, errorOccurredAt } = action;
+  const { metadata } = list;
   const currentList = resources.lists[key] || LIST;
 
   /**
